@@ -1,12 +1,32 @@
-import React from 'react';
+import './bootstrap';
+
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { makeStyles } from '@material-ui/styles';
+import { CircularProgress } from '@material-ui/core';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const style = makeStyles({
+  root: {
+    top: 'calc(50% - 30px)',
+    left: 'calc(50% - 30px)',
+    width: '50px',
+    height: '50px',
+    position: 'absolute',
+  },
+});
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const Spinner = () => {
+  const classes = style();
+  return <CircularProgress disableShrink size="50" className={classes.root} />;
+};
+
+ReactDOM.render(
+  <Suspense fallback={<Spinner />}>
+    <App />
+  </Suspense>,
+  document.getElementById('root'),
+);
+
+serviceWorker.register();

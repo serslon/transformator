@@ -1,17 +1,25 @@
 {
   "name": "transformator",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "@material-ui/core": "^3.7.1",
+    "@material-ui/icons": "^3.0.1",
+    "@material-ui/styles": "^3.0.0-alpha.4",
+    "i18next": "^13.0.1",
+    "i18next-browser-languagedetector": "^2.2.4",
+    "i18next-xhr-backend": "^1.5.1",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-i18next": "^8.4.0",
     "react-scripts": "2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "i18n:scanner": "i18next-scanner --config i18next-scanner.config.js \"src/**/*.js\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,5 +29,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "i18next-scanner": "^2.9.1"
+  }
 }
