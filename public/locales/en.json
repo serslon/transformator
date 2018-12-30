@@ -1,5 +1,10 @@
 {
+  "Autotransformer": "Autotransformer",
   "English": "English",
+  "Pulse Transformer": "Pulse Transformer",
   "Russian": "Russian",
+  "Sinus": "Sinus",
+  "Square": "Square",
+  "The form of signal": "The form of signal",
   "Transform power": "Transformer"
 }

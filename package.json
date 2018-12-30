@@ -6,6 +6,8 @@
     "@material-ui/core": "^3.7.1",
     "@material-ui/icons": "^3.0.1",
     "@material-ui/styles": "^3.0.0-alpha.4",
+    "@serslon/concat-string": "^1.0.2",
+    "debug": "^4.1.1",
     "i18next": "^13.0.1",
     "i18next-browser-languagedetector": "^2.2.4",
     "i18next-xhr-backend": "^1.5.1",

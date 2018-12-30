@@ -1,9 +1,6 @@
 import React from 'react';
+import { Typography } from '@material-ui/core';
 
-class Power extends React.Component {
-  render() {
-    return <div />;
-  }
-}
+const Power = () => <Typography variant="h1">Not ready yet</Typography>;
 
 export default Power;

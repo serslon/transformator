@@ -5,7 +5,13 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { makeStyles } from '@material-ui/styles';
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress, MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
+});
 
 const style = makeStyles({
   root: {
@@ -23,9 +29,11 @@ const Spinner = () => {
 };
 
 ReactDOM.render(
-  <Suspense fallback={<Spinner />}>
-    <App />
-  </Suspense>,
+  <MuiThemeProvider theme={theme}>
+    <Suspense fallback={<Spinner />}>
+      <App />
+    </Suspense>
+  </MuiThemeProvider>,
   document.getElementById('root'),
 );
 

@@ -1,5 +1,10 @@
 {
+  "Autotransformer": "Автотрансформатор",
   "English": "Английский",
+  "Pulse Transformer": "Импульсный трансформатор",
   "Russian": "Русский",
+  "Sinus": "Синусоидальная",
+  "Square": "Прямоугольная",
+  "The form of signal": "Форма сигнала",
   "Transform power": "Трансформатор мощности"
 }
