@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import concatString from '@serslon/concat-string';
-import { makeStyles } from '@material-ui/styles';
-import { useTranslation } from 'react-i18next/hooks';
+import { makeStyles } from '@material-ui/core/styles';
+import { useTranslation } from 'react-i18next';
 import { Grid, TextField, MenuItem } from '@material-ui/core';
 
 import debug from '../debug';
 const logger = debug('Pulse');
 
-const style = makeStyles(theme => ({
-  margin: {
-    margin: theme.spacing.unit,
-  },
-  textField: {
-    width: '100%',
-  },
-}));
+const style = makeStyles(theme => {
+  logger(theme)
+  return {
+    margin: {
+      margin: theme.spacing(1),
+    },
+    textField: {
+      width: '100%',
+    },
+  }
+});
 
 const Pulse = () => {
   const [t] = useTranslation();
@@ -39,7 +42,7 @@ const Pulse = () => {
 
   logger('Render Pulse');
   return (
-    <Grid container spacing={24}>
+    <Grid container spacing={3}>
       <Grid item xs={4}>
         <TextField
           select

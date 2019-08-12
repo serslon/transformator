@@ -1,7 +1,8 @@
-import React, { useState, Fragment } from 'react';
-import { useTranslation } from 'react-i18next/hooks';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Menu as MenuIcon } from '@material-ui/icons';
-import { makeStyles, withTheme } from '@material-ui/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import { makeStyles, createMuiTheme } from '@material-ui/core/styles'
 import {
   List,
   Menu,
@@ -67,13 +68,14 @@ const App = () => {
     onCloseDrawer();
   };
 
+  const theme = createMuiTheme({});
   logger('Render application');
   return (
-    <Fragment>
+    <ThemeProvider theme={theme}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton color="inherit" aria-label="Menu">
-            <MenuIcon onClick={onOpenDrawer} />
+          <IconButton color="inherit" aria-label="Menu" onClick={onOpenDrawer}>
+            <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
             {nameTypes[method]}
@@ -90,7 +92,7 @@ const App = () => {
           </Menu>
         </Toolbar>
       </AppBar>
-      <Grid container spacing={40} className={classes.container}>
+      <Grid container spacing={5} className={classes.container}>
         <Grid item xs={12}>
           <Paper>{component[method]}</Paper>
         </Grid>
@@ -106,8 +108,8 @@ const App = () => {
           ))}
         </List>
       </Drawer>
-    </Fragment>
+    </ThemeProvider>
   );
 };
 
-export default withTheme()(App);
+export default App;
